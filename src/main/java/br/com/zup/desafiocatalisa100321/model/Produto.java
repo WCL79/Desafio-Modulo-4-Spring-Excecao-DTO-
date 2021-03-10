@@ -1,6 +1,7 @@
 package br.com.zup.desafiocatalisa100321.model;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /**
@@ -10,13 +11,9 @@ import java.util.Objects;
  */
 
 public class Produto {
-    @NotBlank(message = "Campo do nome não pode estar vazio!")
+
     private String nome;
-
-    @NotBlank(message = "Campo do nome não pode estar vazio!")
     private double preco;
-
-    @NotBlank(message = "Campo do nome não pode estar vazio!")
     private int quantidade;
 
     public Produto() {
