@@ -1,41 +1,29 @@
 package br.com.zup.desafiocatalisa100321.dto;
 
-import br.com.zup.desafiocatalisa100321.model.Cliente;
-import br.com.zup.desafiocatalisa100321.model.Produto;
-
-import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 
 public class CompraDTO {
 
-    @NotBlank(message = "Campo do nome não pode estar vazio!")
-    private Cliente cliente;
-    @NotBlank(message = "Campo do nome não pode estar vazio!")
-    private Produto produtos;
+    private String cpf;
+    private List<ProdutoDTO> produtos;
 
     public CompraDTO() {
     }
 
-    public CompraDTO(@NotBlank(message = "Campo do nome não pode estar vazio!")
-                             Cliente cliente, @NotBlank(message = "Campo do nome não pode estar vazio!")
-            Produto produtos) {
-        this.cliente = cliente;
-        this.produtos = produtos;
+    public String getCpf() {
+        return cpf;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public Produto getProdutos() {
+    public List<ProdutoDTO> getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(Produto produtos) {
+    public void setProdutos(List<ProdutoDTO> produtos) {
         this.produtos = produtos;
     }
 }
