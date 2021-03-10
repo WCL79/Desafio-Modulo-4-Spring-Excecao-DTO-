@@ -4,20 +4,21 @@ import br.com.zup.desafiocatalisa100321.model.Cliente;
 import br.com.zup.desafiocatalisa100321.model.Produto;
 
 import javax.validation.constraints.NotBlank;
-import java.util.List;
+
 
 public class CompraDTO {
 
     @NotBlank(message = "Campo do nome não pode estar vazio!")
     private Cliente cliente;
     @NotBlank(message = "Campo do nome não pode estar vazio!")
-    private List<Produto> produtos;
+    private Produto produtos;
 
     public CompraDTO() {
     }
 
-    public CompraDTO(@NotBlank(message = "Campo do nome não pode estar vazio!") Cliente cliente,
-                     @NotBlank(message = "Campo do nome não pode estar vazio!") List<Produto> produtos) {
+    public CompraDTO(@NotBlank(message = "Campo do nome não pode estar vazio!")
+                             Cliente cliente, @NotBlank(message = "Campo do nome não pode estar vazio!")
+            Produto produtos) {
         this.cliente = cliente;
         this.produtos = produtos;
     }
@@ -30,11 +31,11 @@ public class CompraDTO {
         this.cliente = cliente;
     }
 
-    public List<Produto> getProdutos() {
+    public Produto getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(List<Produto> produtos) {
+    public void setProdutos(Produto produtos) {
         this.produtos = produtos;
     }
 }
