@@ -1,5 +1,9 @@
 package br.com.zup.desafiocatalisa100321.model;
-
+/**
+ * Classe modelo tipo Compra com atributos do tipo Cliente e List<Produto>
+ * @author Weslley.candido
+ * @version 0.01
+ */
 import java.util.List;
 
 public class Compra {

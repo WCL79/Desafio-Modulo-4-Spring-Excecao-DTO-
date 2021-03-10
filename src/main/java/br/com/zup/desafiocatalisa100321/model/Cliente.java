@@ -15,6 +15,12 @@ public class Cliente {
     public Cliente() {
     }
 
+    public Cliente(String nome, String email, String cpf) {
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -37,18 +43,5 @@ public class Cliente {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cliente cliente = (Cliente) o;
-        return Objects.equals(email, cliente.email) && Objects.equals(cpf, cliente.cpf);
-    }
-
-    @Override
-    public int hashCode() {
-        return 0;
     }
 }
