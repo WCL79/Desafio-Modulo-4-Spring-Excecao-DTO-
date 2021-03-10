@@ -20,7 +20,19 @@ public class ClienteService {
         return fregues;
     }
 
+   /* public Cliente pesquisarCliente(String cpfDePesquisa)throws RuntimeException{
+           Cliente cliente = new Cliente();
+           cliente.setCpf(cpfDePesquisa);
+           return pesquisarCliente(cliente);
+    }*/
 
-
+    public Cliente pesquisarCliente(String cpfDePesquisa){
+        for(Cliente consumidor : clientes){
+            if(consumidor.getCpf().equalsIgnoreCase(cpfDePesquisa)){
+                return consumidor;
+            }
+        }
+        throw new RuntimeException("O paciente com CPF " + cpfDePesquisa+ " Já existe cadastrado");
+    }
 
 }

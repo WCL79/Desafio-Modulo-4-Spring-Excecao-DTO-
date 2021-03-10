@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestControllerAdvice
-@RequestMapping("/clientes/")
+@RequestMapping("clientes/")
 public class ClienteController {
 
     /**
@@ -35,6 +35,15 @@ public class ClienteController {
         return  clienteServiceService.cadastrarCliente(consumidor);
     }
 
+    /**
+     *Médoto que faz Vizualização do Objeto criado
+     * @param cpf
+     * @return: Serviço do médoto pesquisarCliente.
+     */
 
-
+    @GetMapping("{cpf}/")
+    @ResponseStatus(HttpStatus.OK)
+    public Cliente pesquisarPesquisarClientePorCpf(@PathVariable String cpf){
+        return  clienteServiceService.pesquisarCliente(cpf);
+    }
 }
