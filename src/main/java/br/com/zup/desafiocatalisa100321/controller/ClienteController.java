@@ -44,6 +44,6 @@ public class ClienteController {
     @GetMapping("{cpf}/")
     @ResponseStatus(HttpStatus.OK)
     public Cliente pesquisarPesquisarClientePorCpf(@PathVariable String cpf){
-        return  clienteServiceService.pesquisarCliente(cpf);
+        return  clienteServiceService.pesquisarCpfDoCliente(cpf);
     }
 }

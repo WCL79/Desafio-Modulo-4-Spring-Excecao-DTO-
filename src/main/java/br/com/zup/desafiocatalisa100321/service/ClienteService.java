@@ -15,24 +15,46 @@ import java.util.List;
 public class ClienteService {
     private static List<Cliente> clientes = new ArrayList<>();
 
+
     public Cliente cadastrarCliente(Cliente fregues) {
-        clientes.add(fregues);
-        return fregues;
+        if (!clientes.contains(fregues)) {
+            clientes.add(fregues);
+            return fregues;
+        }
+        throw new RuntimeException("O CPF" + fregues.getCpf() + " ou e-mail " + fregues.getEmail() +
+                " cliente existen!");
     }
 
-   /* public Cliente pesquisarCliente(String cpfDePesquisa)throws RuntimeException{
-           Cliente cliente = new Cliente();
-           cliente.setCpf(cpfDePesquisa);
-           return pesquisarCliente(cliente);
-    }*/
-
-    public Cliente pesquisarCliente(String cpfDePesquisa){
-        for(Cliente consumidor : clientes){
-            if(consumidor.getCpf().equalsIgnoreCase(cpfDePesquisa)){
+    public Cliente pesquisarCpfDoCliente(String cpf) {
+        for (Cliente consumidor : clientes) {
+            if (consumidor.getCpf().equalsIgnoreCase(cpf)) {
                 return consumidor;
             }
         }
-        throw new RuntimeException("O paciente com CPF " + cpfDePesquisa+ " Já existe cadastrado");
+
+        throw new RuntimeException("Nenhum cliente foi encontrado com CPF: " + cpf);
+    }
+    /*public Cliente cadastrarCliente(Cliente fregues) {
+        try {
+            pesquisarCliente(fregues);
+        } catch (RuntimeException erro) {
+            clientes.add(fregues);
+            return fregues;
+        }
+        throw new RuntimeException("CPF já Cadastrado!");
+    }
+    private Cliente pesquisarCliente(Cliente fregues) {
+
+        return pesquisarCliente(fregues.getCpf());
     }
 
+    public Cliente pesquisarCliente(String cpfDePesquisa) {
+        for (Cliente consumidor : clientes) {
+            if (consumidor.getCpf().equalsIgnoreCase(cpfDePesquisa)) {
+
+                return consumidor;
+            }
+        }
+        throw new RuntimeException("Não foram localizado!");
+    }*/
 }

@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestControllerAdvice
 @RequestMapping("produtos/")
@@ -14,9 +15,16 @@ public class ProdutoControlller {
 
     @Autowired
     private ProdutoService produtoService;
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Produto cadastrarProduto (@RequestBody @Valid Produto produto){
         return produtoService.cadastrarProduto(produto);
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Produto> pesquisarPesquisaProduto(String prod){
+        return  produtoService.pesquisarProduto();
     }
 }
