@@ -1,5 +1,6 @@
 package br.com.zup.desafiocatalisa100321.service;
 
+import br.com.zup.desafiocatalisa100321.dto.ProdutoDTO;
 import br.com.zup.desafiocatalisa100321.exceptions.ProdutoDuplicadoExcecao;
 import br.com.zup.desafiocatalisa100321.model.Produto;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,6 @@ import java.util.List;
 public class ProdutoService {
 
     private static List<Produto> produtos = new ArrayList<>();
-
     /**
      * Método responsavel pela inserção de novo produto, porém somente é possível mediante produto único
      * por nome.
@@ -28,11 +28,22 @@ public class ProdutoService {
         }
     }
 
-    public List<Produto> pesquisarProduto()
-    {
+    public List<Produto> pesquisarProduto() {
         if (produtos.size() > 0) {
             return produtos;
         }
         throw new ProdutoDuplicadoExcecao("Não existe produto cadastrado!");
-        }
     }
+
+    public  List<Produto> pesquisarCompraDeProduto(List<ProdutoDTO> produtoDTOS){
+        List<Produto> produtosDeCompras = new ArrayList<>();
+        for(ProdutoDTO produtoDTO : produtoDTOS){//Essa é responsável dos nomes dos produtos que o cliente passou
+           for(Produto produto : produtos){
+               if(produto.getNome().equalsIgnoreCase(produtoDTO.getNome())){
+                   produtosDeCompras.add(produto);
+               }
+           }
+        }
+        return produtosDeCompras;
+    }
+}

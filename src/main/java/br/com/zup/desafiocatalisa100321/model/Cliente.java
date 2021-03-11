@@ -15,8 +15,6 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor//Construtor sem argumentos
 @AllArgsConstructor//Construtor com todos argumentos
-@EqualsAndHashCode
-@ToString
 public class Cliente {
     @NotBlank(message = "Campo do nome não pode ser vazio!")
     @NotNull(message = "O campo do nome não foi informada")
