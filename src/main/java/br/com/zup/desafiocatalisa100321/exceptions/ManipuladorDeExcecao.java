@@ -32,9 +32,9 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
 
     }
     /**
-     *
+     * Responsavel pela montagem dos OBJETOS de erros.
      * @param exception
-     * @return: Responsavel pela montagem dos OBJETOS de erros.
+     * @return: a lista de Objetos de erros
      */
     private List<ObjetoDeErro> pergarErros (MethodArgumentNotValidException exception){
         //getFieldErrors() devolve lista de Campos com erros na validação,como sendo List,

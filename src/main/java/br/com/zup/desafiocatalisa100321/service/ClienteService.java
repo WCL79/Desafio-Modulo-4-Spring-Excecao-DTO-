@@ -22,7 +22,7 @@ public class ClienteService {
             return fregues;
         }
         throw new RuntimeException("O CPF" + fregues.getCpf() + " ou e-mail " + fregues.getEmail() +
-                " cliente existen!");
+                " cliente EXISTENTE!");
     }
 
     public Cliente pesquisarCpfDoCliente(String cpf) {
