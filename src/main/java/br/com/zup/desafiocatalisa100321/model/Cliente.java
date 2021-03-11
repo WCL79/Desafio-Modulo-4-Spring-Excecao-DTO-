@@ -15,6 +15,8 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor//Construtor sem argumentos
 @AllArgsConstructor//Construtor com todos argumentos
+@Getter
+@Setter
 @EqualsAndHashCode
 @ToString
 public class Cliente {

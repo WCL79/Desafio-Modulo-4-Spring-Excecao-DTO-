@@ -1,5 +1,6 @@
 package br.com.zup.desafiocatalisa100321.service;
 
+import br.com.zup.desafiocatalisa100321.exceptions.ProdutoListaVaziaExcecao;
 import br.com.zup.desafiocatalisa100321.exceptions.ProdutoReplicaExcecao;
 import br.com.zup.desafiocatalisa100321.model.Produto;
 import lombok.SneakyThrows;
@@ -28,10 +29,11 @@ public class ProdutoService {
             throw new ProdutoReplicaExcecao("Produto com "+mercadoria.getNome()+"já cadastrado!");
         }
     }
-    /**public List<Produto> pesquisarProduto() {
+    @SneakyThrows
+    public List<Produto> pesquisarProduto() {
         if (produtos.size() > 0) {
             return produtos;
         }
         throw new ProdutoListaVaziaExcecao("Não existe produto cadastrado!");
-        }*/
+        }
     }
