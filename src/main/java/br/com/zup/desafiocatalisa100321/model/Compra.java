@@ -16,5 +16,4 @@ public class Compra {
     private Cliente cliente;
     private List<Produto> produtos;
 
-
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RestControllerAdvice
+@RestController
 @RequestMapping("clientes/")
 public class ClienteController {
 

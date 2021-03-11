@@ -11,10 +11,8 @@ import lombok.*;
 @Data
 @NoArgsConstructor//Construtor sem argumentos
 @AllArgsConstructor//Construtor com todos argumentos
-@Getter
-@Setter
 public class ObjetoDeErro {
-    private String notificacao;
+    private String mensagem;
     private String campo;
 
 }

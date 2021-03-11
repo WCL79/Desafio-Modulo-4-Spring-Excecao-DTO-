@@ -9,13 +9,9 @@ import java.util.Objects;
  * @author Weslley.candido
  * @version 0.01
  */
-@Data
+@Data//O @Data contem todos
 @NoArgsConstructor//Construtor sem argumentos
 @AllArgsConstructor//Construtor com todos argumentos
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
 public class Produto {
 
     private String nome;

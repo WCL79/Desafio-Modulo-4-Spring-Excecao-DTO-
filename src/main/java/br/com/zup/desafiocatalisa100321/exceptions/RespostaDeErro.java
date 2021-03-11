@@ -1,16 +1,16 @@
 package br.com.zup.desafiocatalisa100321.exceptions;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 @Data
 @NoArgsConstructor//Construtor sem argumentos
 @AllArgsConstructor//Construtor com todos argumentos
-@Getter
-@Setter
-public class RetornoDeErro {
+public class RespostaDeErro {
     private String tipoDeErro;
-    private int codigoDoErro;
-    private String statusCode;
-    private List<ObjetoDeErro> objetoDeErro;
+    private int codigo;
+    private String status;
+    private List<ObjetoDeErro> objetosDeErro;
 }

@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@RestControllerAdvice
-@RequestMapping("produtos/")
+@RestController
+@RequestMapping("/produtos/")
 public class ProdutoControlller {
 
     @Autowired
@@ -22,9 +22,9 @@ public class ProdutoControlller {
         return produtoService.cadastrarProduto(produto);
     }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public List<Produto> pesquisarPesquisaProduto(String prod){
-        return  produtoService.pesquisarProduto();
+        @GetMapping
+        @ResponseStatus(HttpStatus.OK)
+        public List<Produto> pesquisarPesquisaProduto() {
+            return  produtoService.pesquisarProduto();
+        }
     }
-}
