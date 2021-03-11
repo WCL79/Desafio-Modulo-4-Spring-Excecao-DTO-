@@ -6,8 +6,6 @@ package br.com.zup.desafiocatalisa100321.exceptions;
  * Classe responsavel pela manipulação dos objetos com ERROS
  * ResponseEntityExceptionHandler é classe que ficará responsavel em responder aos usuários
  */
-
-
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

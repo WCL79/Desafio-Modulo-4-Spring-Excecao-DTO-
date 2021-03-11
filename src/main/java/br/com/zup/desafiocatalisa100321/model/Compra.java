@@ -4,33 +4,17 @@ package br.com.zup.desafiocatalisa100321.model;
  * @author Weslley.candido
  * @version 0.01
  */
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.List;
+@Data
+@NoArgsConstructor//Construtor sem argumentos
+@AllArgsConstructor//Construtor com todos argumentos
 public class Compra {
     private Cliente cliente;
     private List<Produto> produtos;
 
-    public Compra() {
-    }
 
-    public Compra(Cliente cliente, List<Produto> produtos) {
-        this.cliente = cliente;
-        this.produtos = produtos;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public List<Produto> getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
-    }
 }

@@ -1,7 +1,7 @@
 package br.com.zup.desafiocatalisa100321.model;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import lombok.*;
+
 import java.util.Objects;
 
 /**
@@ -9,43 +9,18 @@ import java.util.Objects;
  * @author Weslley.candido
  * @version 0.01
  */
-
+@Data
+@NoArgsConstructor//Construtor sem argumentos
+@AllArgsConstructor//Construtor com todos argumentos
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class Produto {
 
     private String nome;
-
-
     private double preco;
-
-
     private int quantidade;
-
-    public Produto() {
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -57,6 +32,7 @@ public class Produto {
 
     @Override
     public int hashCode() {
-        return 0;
+        return Objects.hash(nome);
     }
+
 }

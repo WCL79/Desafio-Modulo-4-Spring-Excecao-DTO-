@@ -1,5 +1,7 @@
 package br.com.zup.desafiocatalisa100321.model;
 
+import lombok.*;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -10,6 +12,11 @@ import java.util.Objects;
  * @author Weslley.candido
  * @version 0.01
  */
+@Data
+@NoArgsConstructor//Construtor sem argumentos
+@AllArgsConstructor//Construtor com todos argumentos
+@EqualsAndHashCode
+@ToString
 public class Cliente {
     @NotBlank(message = "Campo do nome não pode ser vazio!")
     @NotNull(message = "O campo do nome não foi informada")
@@ -24,38 +31,6 @@ public class Cliente {
     @NotNull(message = "O campo raça não foi informada")
     private String cpf;
 
-    public Cliente() {
-    }
-
-    public Cliente(String nome, String email, String cpf) {
-        this.nome = nome;
-        this.email = email;
-        this.cpf = cpf;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
 
     @Override
     public boolean equals(Object o) {
