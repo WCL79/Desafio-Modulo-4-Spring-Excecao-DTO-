@@ -35,7 +35,7 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
     private List<ObjetoDeErro> pergarErros (MethodArgumentNotValidException exception){
         //Esse médoto foi objeto de estudo 09/03/21
         //getFieldErrors() devolve lista de Campos com erros na validação,como sendo List,
-        //pode-se usar o recurso Stream ao aplicar for
+        //pode-se usar o recurso Stream ao invés de aplicar for
         List<ObjetoDeErro> objetoDeErroList = exception.getBindingResult()
                 .getFieldErrors()
                 .stream()
@@ -81,6 +81,5 @@ public class ManipuladorDeExcecao extends ResponseEntityExceptionHandler {
                 Arrays.asList(objetoDeErro));
         return respostaDeErro;
     }
-
 
 }
